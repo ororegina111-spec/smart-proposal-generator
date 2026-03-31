@@ -1,53 +1,166 @@
 import { KPFormData, KPComputed } from '@/hooks/useKPData';
 import '@/styles/kp-sidebar.css';
 
+export type KPLang = 'ru' | 'he';
+
 interface Props {
   data: KPFormData;
   computed: KPComputed;
+  lang: KPLang;
+  onLangChange: (lang: KPLang) => void;
   onUpdate: <K extends keyof KPFormData>(key: K, value: KPFormData[K]) => void;
   onReset: () => void;
   onPrintPDF: () => void;
   onDownloadHTML: () => void;
 }
 
-export function KPSidebar({ data, computed, onUpdate, onReset, onPrintPDF, onDownloadHTML }: Props) {
+const labels = {
+  ru: {
+    title: '🏠 Генератор КП — Балконы',
+    order: 'Реквизиты заказа',
+    orderNo: '№ Заказа',
+    date: 'Дата',
+    client: 'Данные клиента',
+    clientName: 'Имя клиента',
+    clientPlaceholder: 'Иван Петров',
+    city: 'Город',
+    cityPlaceholder: 'Тель-Авив',
+    system: 'Характеристики системы',
+    systemType: 'Тип системы',
+    glassType: 'Тип стекла',
+    dimensions: 'Размеры балкона',
+    length: 'Длина (см)',
+    height: 'Высота (см)',
+    finance: 'Финансы',
+    pricePerSqm: 'Цена за м² (₪, без НДС)',
+    extras: 'Доп. работы / Алюм. планки (₪)',
+    area: 'Площадь',
+    systemCost: 'Стоимость системы',
+    extrasLabel: 'Доп. работы',
+    total: 'ИТОГО',
+    downloadPDF: '🖨️ Скачать PDF',
+    downloadHTML: '📄 Скачать HTML',
+    reset: '↺ Сбросить данные',
+    alertName: 'Введите имя клиента',
+    glass: {
+      'clear10': 'Прозрачное 10 мм',
+      'triplex_clear': 'Триплекс 5+5 прозрачный',
+      'triplex_milk': 'Триплекс 5+5 молочный',
+      'anti_sun': 'Противосолнечное 10 мм',
+    },
+    glassValues: {
+      'clear10': 'Прозрачное закалённое 10 мм',
+      'triplex_clear': 'Триплекс 5+5 мм прозрачный',
+      'triplex_milk': 'Триплекс 5+5 мм молочный',
+      'anti_sun': 'Противосолнечное 10 мм',
+    },
+  },
+  he: {
+    title: '🏠 מחולל הצעות מחיר — מרפסות',
+    order: 'פרטי הזמנה',
+    orderNo: 'מס׳ הזמנה',
+    date: 'תאריך',
+    client: 'פרטי לקוח',
+    clientName: 'שם הלקוח',
+    clientPlaceholder: 'יוסי כהן',
+    city: 'עיר',
+    cityPlaceholder: 'תל אביב',
+    system: 'מאפייני המערכת',
+    systemType: 'סוג מערכת',
+    glassType: 'סוג זכוכית',
+    dimensions: 'מידות המרפסת',
+    length: 'אורך (ס״מ)',
+    height: 'גובה (ס״מ)',
+    finance: 'כספים',
+    pricePerSqm: 'מחיר למ״ר (₪, ללא מע״מ)',
+    extras: 'עבודות נוספות / פסי אלומיניום (₪)',
+    area: 'שטח',
+    systemCost: 'עלות מערכת',
+    extrasLabel: 'עבודות נוספות',
+    total: 'סה״כ',
+    downloadPDF: '🖨️ שמור כ-PDF',
+    downloadHTML: '📄 הורד HTML',
+    reset: '↺ איפוס נתונים',
+    alertName: 'נא להזין שם לקוח',
+    glass: {
+      'clear10': 'שקוף מחוסם 10 מ״מ',
+      'triplex_clear': 'טריפלקס 5+5 שקוף',
+      'triplex_milk': 'טריפלקס 5+5 חלבי',
+      'anti_sun': 'אנטי-שמש 10 מ״מ',
+    },
+    glassValues: {
+      'clear10': 'Прозрачное закалённое 10 мм',
+      'triplex_clear': 'Триплекс 5+5 мм прозрачный',
+      'triplex_milk': 'Триплекс 5+5 мм молочный',
+      'anti_sun': 'Противосолнечное 10 мм',
+    },
+  },
+};
+
+export function KPSidebar({ data, computed, lang, onLangChange, onUpdate, onReset, onPrintPDF, onDownloadHTML }: Props) {
+  const t = labels[lang];
+
   return (
-    <div className="kp-sidebar no-print">
+    <div className="kp-sidebar no-print" style={lang === 'he' ? {direction: 'rtl'} : undefined}>
       <div className="kp-sidebar-header">
-        <h2>🏠 Генератор КП — Балконы</h2>
+        <h2>{t.title}</h2>
+        <div style={{display:'flex', gap:'6px', marginTop:'8px'}}>
+          <button
+            onClick={() => onLangChange('ru')}
+            style={{
+              flex:1, padding:'6px 0', border:'1px solid rgba(201,168,76,.4)',
+              borderRadius:'4px', cursor:'pointer', fontWeight:700, fontSize:'0.85rem',
+              background: lang === 'ru' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : 'transparent',
+              color: lang === 'ru' ? '#0A0A0A' : '#C9A84C',
+            }}
+          >
+            🇷🇺 Русский
+          </button>
+          <button
+            onClick={() => onLangChange('he')}
+            style={{
+              flex:1, padding:'6px 0', border:'1px solid rgba(201,168,76,.4)',
+              borderRadius:'4px', cursor:'pointer', fontWeight:700, fontSize:'0.85rem',
+              background: lang === 'he' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : 'transparent',
+              color: lang === 'he' ? '#0A0A0A' : '#C9A84C',
+            }}
+          >
+            🇮🇱 עברית
+          </button>
+        </div>
       </div>
 
       <div className="kp-sidebar-body">
-        <div className="kp-section-label">Реквизиты заказа</div>
+        <div className="kp-section-label">{t.order}</div>
 
         <div className="kp-field">
-          <label>№ Заказа</label>
+          <label>{t.orderNo}</label>
           <input type="text" value={data.orderNumber} onChange={e => onUpdate('orderNumber', e.target.value)} />
         </div>
 
         <div className="kp-field">
-          <label>Дата</label>
+          <label>{t.date}</label>
           <input type="text" value={data.date} onChange={e => onUpdate('date', e.target.value)} />
         </div>
 
         <hr className="kp-sep" />
-        <div className="kp-section-label">Данные клиента</div>
+        <div className="kp-section-label">{t.client}</div>
 
         <div className="kp-field">
-          <label>Имя клиента</label>
-          <input type="text" value={data.clientName} placeholder="Иван Петров" onChange={e => onUpdate('clientName', e.target.value)} />
+          <label>{t.clientName}</label>
+          <input type="text" value={data.clientName} placeholder={t.clientPlaceholder} onChange={e => onUpdate('clientName', e.target.value)} />
         </div>
 
         <div className="kp-field">
-          <label>Город</label>
-          <input type="text" value={data.city} placeholder="Тель-Авив" onChange={e => onUpdate('city', e.target.value)} />
+          <label>{t.city}</label>
+          <input type="text" value={data.city} placeholder={t.cityPlaceholder} onChange={e => onUpdate('city', e.target.value)} />
         </div>
 
         <hr className="kp-sep" />
-        <div className="kp-section-label">Характеристики системы</div>
+        <div className="kp-section-label">{t.system}</div>
 
         <div className="kp-field">
-          <label>Тип системы</label>
+          <label>{t.systemType}</label>
           <select value={data.productType} onChange={e => onUpdate('productType', e.target.value)}>
             <option value="Система TANGO">TANGO</option>
             <option value="Система TIARA">TIARA</option>
@@ -56,54 +169,54 @@ export function KPSidebar({ data, computed, onUpdate, onReset, onPrintPDF, onDow
         </div>
 
         <div className="kp-field">
-          <label>Тип стекла</label>
+          <label>{t.glassType}</label>
           <select value={data.glassType} onChange={e => onUpdate('glassType', e.target.value)}>
-            <option value="Прозрачное закалённое 10 мм">Прозрачное 10 мм</option>
-            <option value="Триплекс 5+5 мм прозрачный">Триплекс 5+5 прозрачный</option>
-            <option value="Триплекс 5+5 мм молочный">Триплекс 5+5 молочный</option>
-            <option value="Противосолнечное 10 мм">Противосолнечное 10 мм</option>
+            <option value={t.glassValues.clear10}>{t.glass.clear10}</option>
+            <option value={t.glassValues.triplex_clear}>{t.glass.triplex_clear}</option>
+            <option value={t.glassValues.triplex_milk}>{t.glass.triplex_milk}</option>
+            <option value={t.glassValues.anti_sun}>{t.glass.anti_sun}</option>
           </select>
         </div>
 
         <hr className="kp-sep" />
-        <div className="kp-section-label">Размеры балкона</div>
+        <div className="kp-section-label">{t.dimensions}</div>
 
         <div className="kp-field">
-          <label>Длина (см)</label>
+          <label>{t.length}</label>
           <input type="number" value={data.length} min={50} onChange={e => onUpdate('length', Number(e.target.value) || 0)} />
         </div>
 
         <div className="kp-field">
-          <label>Высота (см)</label>
+          <label>{t.height}</label>
           <input type="number" value={data.height} min={50} onChange={e => onUpdate('height', Number(e.target.value) || 0)} />
         </div>
 
         <hr className="kp-sep" />
-        <div className="kp-section-label">Финансы</div>
+        <div className="kp-section-label">{t.finance}</div>
 
         <div className="kp-field">
-          <label>Цена за м² (₪, без НДС)</label>
+          <label>{t.pricePerSqm}</label>
           <input type="number" value={data.pricePerSqm} min={100} onChange={e => onUpdate('pricePerSqm', Number(e.target.value) || 0)} />
         </div>
 
         <div className="kp-field">
-          <label>Доп. работы / Алюм. планки (₪)</label>
+          <label>{t.extras}</label>
           <input type="number" value={data.extras} min={0} onChange={e => onUpdate('extras', Number(e.target.value) || 0)} />
         </div>
 
         {/* Calculated display */}
         <div className="kp-calc-box">
-          <div className="kp-calc-row"><span>Площадь</span><span className="kp-calc-val">{computed.area} м²</span></div>
-          <div className="kp-calc-row"><span>Стоимость системы</span><span className="kp-calc-val">{computed.systemCost} ₪</span></div>
-          <div className="kp-calc-row"><span>Доп. работы</span><span className="kp-calc-val">{computed.extrasStr} ₪</span></div>
-          <div className="kp-calc-row kp-calc-total"><span>ИТОГО</span><span className="kp-calc-val">{computed.totalPrice} ₪</span></div>
+          <div className="kp-calc-row"><span>{t.area}</span><span className="kp-calc-val">{computed.area} {lang === 'ru' ? 'м²' : 'מ״ר'}</span></div>
+          <div className="kp-calc-row"><span>{t.systemCost}</span><span className="kp-calc-val">{computed.systemCost} ₪</span></div>
+          <div className="kp-calc-row"><span>{t.extrasLabel}</span><span className="kp-calc-val">{computed.extrasStr} ₪</span></div>
+          <div className="kp-calc-row kp-calc-total"><span>{t.total}</span><span className="kp-calc-val">{computed.totalPrice} ₪</span></div>
         </div>
       </div>
 
       <div className="kp-sidebar-footer">
-        <button className="kp-btn-pdf" onClick={onPrintPDF}>🖨️ Скачать PDF</button>
-        <button className="kp-btn-html" onClick={onDownloadHTML}>📄 Скачать HTML</button>
-        <button className="kp-btn-reset" onClick={onReset}>↺ Сбросить данные</button>
+        <button className="kp-btn-pdf" onClick={onPrintPDF}>{t.downloadPDF}</button>
+        <button className="kp-btn-html" onClick={onDownloadHTML}>{t.downloadHTML}</button>
+        <button className="kp-btn-reset" onClick={onReset}>{t.reset}</button>
       </div>
     </div>
   );
