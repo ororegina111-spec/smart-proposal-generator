@@ -41,13 +41,13 @@ export function KPPage4Systems() {
 
         {/* SLIDER */}
         <div className="sys-card">
-          <div className="sys-card-head">
+          <div className="sys-card-head" style={{padding:'10px 16px'}}>
             <h4>СИСТЕМА SLIDER</h4>
             <p>Раздвижное остекление</p>
           </div>
-          <div className="sys-card-body">
-            <img src={kpImg8} alt="SLIDER" />
-            <p style={{fontSize:'0.87rem',marginBottom:'10px'}}>Функциональная система, которая экономит пространство — створки сдвигаются по направляющим, не открываясь внутрь. Обеспечивает хорошую защиту от ветра и осадков. Более бюджетный вариант.</p>
+          <div className="sys-card-body" style={{padding:'10px 16px'}}>
+            <img src={kpImg8} alt="SLIDER" style={{height:'32mm', marginBottom:'8px'}} />
+            <p style={{fontSize:'0.82rem',marginBottom:'6px',lineHeight:'1.45'}}>Функциональная система — створки сдвигаются по направляющим, экономя пространство. Бюджетный вариант с хорошей защитой.</p>
             <table className="spec-mini">
               <tbody>
                 <tr><td>Тип стекла</td><td>Закалённое 10 мм / Алюминиевые системы</td></tr>
