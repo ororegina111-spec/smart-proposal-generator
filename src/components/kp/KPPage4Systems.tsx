@@ -7,8 +7,8 @@ import kpImg11 from '@/assets/kp/kp_img_11.jpg';
 
 export function KPPage4Systems() {
   return (
-    <div className="kp-page" style={{display:'flex', flexDirection:'column', minHeight:'297mm'}}>
-      <div className="sys-hero">
+    <div className="kp-page">
+      <div className="sys-hero" style={{ height: '62mm' }}>
         <img src={kpImg6} alt="Системы" />
         <div className="sys-hero-ov"></div>
         <div className="sys-hero-txt">
@@ -17,17 +17,16 @@ export function KPPage4Systems() {
         </div>
       </div>
 
-      <div className="sys-cards" style={{padding:'16px 36px', gap:'12px'}}>
-        {/* TANGO/TIARA */}
+      <div className="sys-cards" style={{ padding: '12px 36px 10px', gap: '10px' }}>
         <div className="sys-card">
-          <div className="sys-card-head" style={{padding:'10px 16px'}}>
+          <div className="sys-card-head" style={{ padding: '8px 14px' }}>
             <h4>СИСТЕМА TANGO / TIARA</h4>
-            <p>Безрамное складное остекление</p>
+            <p style={{ fontSize: '0.76rem', marginTop: '2px' }}>Безрамное складное остекление</p>
           </div>
-          <div className="sys-card-body" style={{padding:'10px 16px'}}>
-            <img src={kpImg7} alt="TANGO" style={{height:'32mm', marginBottom:'8px'}} />
-            <p style={{fontSize:'0.82rem',marginBottom:'6px',lineHeight:'1.45'}}>Идеальное решение для тех, кто ценит максимальный панорамный обзор и эстетику. Панели складываются «книжкой», открывая 100% проёма.</p>
-            <table className="spec-mini">
+          <div className="sys-card-body" style={{ padding: '8px 14px' }}>
+            <img src={kpImg7} alt="TANGO" style={{ height: '26mm', marginBottom: '6px' }} />
+            <p style={{ fontSize: '0.76rem', marginBottom: '4px', lineHeight: '1.35' }}>Идеальное решение для тех, кто ценит максимальный панорамный обзор и эстетику. Панели складываются «книжкой», открывая 100% проёма.</p>
+            <table className="spec-mini" style={{ fontSize: '0.78rem' }}>
               <tbody>
                 <tr><td>Тип стекла</td><td>Закалённое 10 мм / Триплекс 5+5 мм</td></tr>
                 <tr><td>Открывание</td><td>Складывается, 100% проёма открыто</td></tr>
@@ -39,16 +38,15 @@ export function KPPage4Systems() {
           </div>
         </div>
 
-        {/* SLIDER */}
         <div className="sys-card">
-          <div className="sys-card-head" style={{padding:'10px 16px'}}>
+          <div className="sys-card-head" style={{ padding: '8px 14px' }}>
             <h4>СИСТЕМА SLIDER</h4>
-            <p>Раздвижное остекление</p>
+            <p style={{ fontSize: '0.76rem', marginTop: '2px' }}>Раздвижное остекление</p>
           </div>
-          <div className="sys-card-body" style={{padding:'10px 16px'}}>
-            <img src={kpImg8} alt="SLIDER" style={{height:'32mm', marginBottom:'8px'}} />
-            <p style={{fontSize:'0.82rem',marginBottom:'6px',lineHeight:'1.45'}}>Функциональная система — створки сдвигаются по направляющим, экономя пространство. Бюджетный вариант с хорошей защитой.</p>
-            <table className="spec-mini">
+          <div className="sys-card-body" style={{ padding: '8px 14px' }}>
+            <img src={kpImg8} alt="SLIDER" style={{ height: '26mm', marginBottom: '6px' }} />
+            <p style={{ fontSize: '0.76rem', marginBottom: '4px', lineHeight: '1.35' }}>Функциональная система — створки сдвигаются по направляющим, экономя пространство. Бюджетный вариант с хорошей защитой.</p>
+            <table className="spec-mini" style={{ fontSize: '0.78rem' }}>
               <tbody>
                 <tr><td>Тип стекла</td><td>Закалённое 10 мм / Алюминиевые системы</td></tr>
                 <tr><td>Открывание</td><td>Сдвигается в стороны (как купе)</td></tr>
@@ -61,33 +59,29 @@ export function KPPage4Systems() {
         </div>
       </div>
 
-      {/* FAQ */}
-      <div className="faq-box" style={{margin:'0 36px 12px', padding:'14px 18px'}}>
-        <h4 style={{marginBottom:'10px'}}>Часто задаваемые вопросы</h4>
-        <div className="faq-item">
-          <div className="faq-q">Стекло хрупкое?</div>
-          <div className="faq-a">Только на вид. Закалённое стекло 10 мм при разрушении рассыпается на безопасную крошку с тупыми краями — не причиняет вреда.</div>
+      <div className="faq-box" style={{ margin: '0 36px 8px', padding: '12px 16px' }}>
+        <h4 style={{ marginBottom: '8px' }}>Часто задаваемые вопросы</h4>
+        <div className="faq-item" style={{ marginBottom: '8px', paddingBottom: '8px' }}>
+          <div className="faq-q" style={{ fontSize: '0.88rem' }}>Стекло хрупкое?</div>
+          <div className="faq-a" style={{ fontSize: '0.8rem', lineHeight: '1.45' }}>Только на вид. Закалённое стекло 10 мм при разрушении рассыпается на безопасную крошку с тупыми краями — не причиняет вреда.</div>
+        </div>
+        <div className="faq-item" style={{ marginBottom: '8px', paddingBottom: '8px' }}>
+          <div className="faq-q" style={{ fontSize: '0.88rem' }}>Боюсь, что будет шумно?</div>
+          <div className="faq-a" style={{ fontSize: '0.8rem', lineHeight: '1.45' }}>Напротив. Качественные профили и силиконовые уплотнители между полотнами снижают уличный шум, обеспечивая тишину в помещении.</div>
         </div>
         <div className="faq-item">
-          <div className="faq-q">Боюсь, что будет шумно?</div>
-          <div className="faq-a">Напротив. Качественные профили и силиконовые уплотнители между полотнами снижают уличный шум, обеспечивая тишину в помещении.</div>
-        </div>
-        <div className="faq-item">
-          <div className="faq-q">Дорого и долго?</div>
-          <div className="faq-a">Собственное производство в Израиле — срок изготовления 3 недели, монтаж до 3 дней. Приезжайте на фабрику и убедитесь лично!</div>
+          <div className="faq-q" style={{ fontSize: '0.88rem' }}>Дорого и долго?</div>
+          <div className="faq-a" style={{ fontSize: '0.8rem', lineHeight: '1.45' }}>Собственное производство в Израиле — срок изготовления 3 недели, монтаж до 3 дней. Приезжайте на фабрику и убедитесь лично!</div>
         </div>
       </div>
 
-      {/* Gallery */}
-      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'4px', margin:'0 36px 0'}}>
-        <img src={kpImg9} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
-        <img src={kpImg10} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
-        <img src={kpImg11} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '4px', margin: '0 36px 0' }}>
+        <img src={kpImg9} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
+        <img src={kpImg10} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
+        <img src={kpImg11} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
       </div>
 
-      <div style={{flex:1}}></div>
-
-      <div className="pg-footer">
+      <div className="pg-footer" style={{ marginTop: '8px' }}>
         <span className="fb">Modernbuilding</span>
         <span className="fc">mdtinyhaus.com</span>
         <span className="fn">4</span>
