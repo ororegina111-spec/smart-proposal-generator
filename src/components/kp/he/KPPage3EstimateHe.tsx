@@ -27,9 +27,8 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
         <div className="sub">לקוח: <span className="v">{data.clientName || '—'}</span> · <span className="v">{data.city || '—'}</span> · שטח: <span className="v">{computed.area}</span> מ״ר</div>
       </div>
 
-      <div className="inner" style={{paddingTop:'22px'}}>
-        {/* Dimension box */}
-        <div className="sizes-grid">
+      <div className="inner" style={{paddingTop:'16px', paddingBottom:'8px'}}>
+        <div className="sizes-grid" style={{marginBottom:'14px'}}>
           <div className="size-card">
             <label>מערכת</label>
             <span className="val" style={{fontSize:'1rem'}}>{data.productType.replace('Система ', '')}</span>
@@ -51,16 +50,14 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
           </div>
         </div>
 
-        {/* System box */}
-        <div className="sys-box">
+        <div className="sys-box" style={{marginBottom:'14px'}}>
           <h4>{heSystem(data.productType)} — סגירה נאספת ללא מסגרת</h4>
           <p>מערכת נאספת ללא עמודים, פתיחה מהמרכז לשני הצדדים או לצד אחד. ייצור ישראלי, בהתאם לדרישות ולתקנים הישראליים.</p>
           <h4 className="glaz-head" style={{fontSize:'1.05rem', marginTop:'10px'}}>זיגוג</h4>
           <p>זכוכית בטיחות טריפלקס 5+5 מ״מ או מחוסמת 10 מ״מ — שקופה, חלבית, אנטי-שמש. כל הזכוכיות עומדות בדרישות התקן הישראלי.</p>
         </div>
 
-        {/* Spec table */}
-        <table className="spec">
+        <table className="spec" style={{marginBottom:'12px'}}>
           <thead>
             <tr>
               <th>מס׳</th><th>פריט</th><th>מפרט</th><th>כמות</th><th>מחיר</th>
@@ -103,17 +100,17 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
           </tbody>
         </table>
 
-        <div className="note-box" style={{fontSize:'0.78rem', lineHeight:'1.4', padding:'8px 14px'}}>
+        <div className="note-box" style={{fontSize:'0.75rem', lineHeight:'1.3', padding:'6px 12px'}}>
           ⚠️ המחירים מוצגים ללא מע״מ והינם אומדן בלבד. מבוססים על המידות שנמסרו על ידי הלקוח. המחיר הסופי ייקבע לאחר מדידה מקצועית. מחיר המ״ר נשאר קבוע ולא משתנה.
         </div>
 
-        <div className="guarantee-box" style={{fontSize:'0.78rem', lineHeight:'1.4', padding:'8px 14px'}}>
-          <h5 style={{fontSize:'0.85rem'}}>🛡️ אחריות</h5>
-          <p>אחריות מוגבלת ל-5 שנים על המערכת ועל עבודת ההתקנה, לא כולל זכוכית. האחריות תקפה בתנאי שימוש תקין, תחזוקה נאותה ובהיעדר נזק מכני.</p>
+        <div className="guarantee-box" style={{marginTop:'6px', padding:'8px 16px', display:'flex', alignItems:'center', gap:'10px'}}>
+          <h5 style={{fontSize:'0.85rem', whiteSpace:'nowrap'}}>🛡️ אחריות</h5>
+          <p style={{fontSize:'0.78rem', lineHeight:'1.35', margin:0}}>אחריות מוגבלת ל-5 שנים על המערכת ועל עבודת ההתקנה, לא כולל זכוכית. האחריות תקפה בתנאי שימוש תקין, תחזוקה נאותה ובהיעדר נזק מכני.</p>
         </div>
       </div>
 
-      <div className="pg-footer" style={{marginTop:'8px'}}>
+      <div className="pg-footer" style={{marginTop:'0'}}>
         <span className="fb">Modernbuilding</span>
         <span className="fc">לקוח: <span className="v">{data.clientName || '—'}</span></span>
         <span className="fn">3</span>
