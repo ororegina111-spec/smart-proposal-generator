@@ -7,7 +7,6 @@
 /* ── PAGE SHELL ── */
 .kp-page {
   width: 210mm;
-  min-height: 297mm;
   background: white;
   margin: 0 auto 24px;
   overflow: hidden;
