@@ -1,8 +1,29 @@
 /**
  * Export KP as a self-contained HTML file.
- * Captures the render area HTML + all CSS + inlined images.
+ * Converts all images to inline base64 data URIs for portability.
  */
-export function exportAsHTML(renderAreaId: string, fileName: string) {
+
+async function imageToBase64(imgEl: HTMLImageElement): Promise<string> {
+  const src = imgEl.src;
+  
+  // Already a data URI
+  if (src.startsWith('data:')) return src;
+  
+  try {
+    const response = await fetch(src);
+    const blob = await response.blob();
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.onerror = () => resolve(src);
+      reader.readAsDataURL(blob);
+    });
+  } catch {
+    return src;
+  }
+}
+
+export async function exportAsHTML(renderAreaId: string, fileName: string) {
   const renderArea = document.getElementById(renderAreaId);
   if (!renderArea) return;
 
@@ -17,19 +38,24 @@ export function exportAsHTML(renderAreaId: string, fileName: string) {
         allCSS += rule.cssText + '\n';
       });
     } catch {
-      // Cross-origin stylesheets can't be read
       if (sheet.href) {
         allCSS += `@import url("${sheet.href}");\n`;
       }
     }
   });
 
-  // Clone the render area to convert images
+  // Clone the render area
   const clone = renderArea.cloneNode(true) as HTMLElement;
   
-  // Convert all images to inline if they're blob/data URLs (already inline)
-  // For imported images (bundled by Vite), they're already data URIs or relative paths
+  // Convert all images to base64
+  const originalImages = renderArea.querySelectorAll('img');
+  const cloneImages = clone.querySelectorAll('img');
   
+  for (let i = 0; i < originalImages.length; i++) {
+    const base64 = await imageToBase64(originalImages[i]);
+    cloneImages[i].src = base64;
+  }
+
   const html = `<!DOCTYPE html>
 <html lang="ru">
 <head>
