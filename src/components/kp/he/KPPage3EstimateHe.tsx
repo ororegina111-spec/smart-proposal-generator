@@ -29,19 +29,25 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
 
       <div className="inner" style={{paddingTop:'22px'}}>
         {/* Dimension box */}
-        <div className="dim-box">
-          <h4>מידות המרפסת</h4>
-          <div className="dim-row">
-            <span className="dim-tag">אורך</span>
-            <span className="dim-line"><span className="v">{data.length}</span> ס״מ</span>
+        <div className="sizes-grid">
+          <div className="size-card">
+            <label>מערכת</label>
+            <span className="val" style={{fontSize:'1rem'}}>{data.productType.replace('Система ', '')}</span>
           </div>
-          <div className="dim-row">
-            <span className="dim-tag">גובה</span>
-            <span className="dim-line"><span className="v">{data.height}</span> ס״מ</span>
+          <div className="size-card">
+            <label>אורך</label>
+            <span className="val">{data.length}</span>
+            <span className="unit">ס״מ</span>
           </div>
-          <div className="dim-row">
-            <span className="dim-tag">שטח כולל</span>
-            <span className="dim-line"><span className="v">{computed.area}</span> מ״ר</span>
+          <div className="size-card">
+            <label>גובה</label>
+            <span className="val">{data.height}</span>
+            <span className="unit">ס״מ</span>
+          </div>
+          <div className="size-card">
+            <label>שטח</label>
+            <span className="val">{computed.area}</span>
+            <span className="unit">מ״ר</span>
           </div>
         </div>
 
