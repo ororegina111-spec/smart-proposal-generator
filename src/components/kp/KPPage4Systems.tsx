@@ -85,6 +85,8 @@ export function KPPage4Systems() {
         <img src={kpImg11} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
       </div>
 
+      <div style={{flex:1}}></div>
+
       <div className="pg-footer">
         <span className="fb">Modernbuilding</span>
         <span className="fc">mdtinyhaus.com</span>
