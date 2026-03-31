@@ -20,7 +20,7 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
   const fmt = (n: number) => n.toLocaleString('he-IL');
 
   return (
-    <div className="kp-page kp-rtl" style={{display:'flex', flexDirection:'column', minHeight:'297mm'}}>
+    <div className="kp-page kp-rtl">
       <div className="est-header">
         <div className="label">אומדן מקדמי</div>
         <h2>סגירת מרפסת — <span className="v">{heSystem(data.productType)}</span></h2>
