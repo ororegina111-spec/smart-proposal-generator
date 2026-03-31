@@ -1,9 +1,6 @@
 import kpImg6 from '@/assets/kp/kp_img_6.jpg';
 import kpImg7 from '@/assets/kp/kp_img_7.jpg';
 import kpImg8 from '@/assets/kp/kp_img_8.jpg';
-import kpImg9 from '@/assets/kp/kp_img_9.jpg';
-import kpImg10 from '@/assets/kp/kp_img_10.jpg';
-import kpImg11 from '@/assets/kp/kp_img_11.jpg';
 
 export function KPPage4Systems() {
   return (
@@ -73,12 +70,6 @@ export function KPPage4Systems() {
           <div className="faq-q" style={{ fontSize: '0.88rem' }}>Дорого и долго?</div>
           <div className="faq-a" style={{ fontSize: '0.8rem', lineHeight: '1.45' }}>Собственное производство в Израиле — срок изготовления 3 недели, монтаж до 3 дней. Приезжайте на фабрику и убедитесь лично!</div>
         </div>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '4px', margin: '0 36px 0' }}>
-        <img src={kpImg9} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
-        <img src={kpImg10} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
-        <img src={kpImg11} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
       </div>
 
       <div className="pg-footer" style={{ marginTop: '8px' }}>
