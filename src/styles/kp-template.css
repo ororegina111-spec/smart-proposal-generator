@@ -464,6 +464,8 @@
   background: #0A0A0A; border-radius: 6px;
   padding: 13px 10px; text-align: center;
   border: 1px solid rgba(201,168,76,.2);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
 }
 .kp-page .pay-step .pct {
   font-family: 'Playfair Display',serif;
