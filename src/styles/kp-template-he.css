@@ -160,13 +160,15 @@
   font-size: 1.05rem;
   color: #0A0A0A;
   margin-bottom: 8px;
+  text-align: right;
 }
 .kp-page.kp-rtl .dim-row {
   display: flex;
   gap: 8px;
   align-items: baseline;
   margin-bottom: 4px;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 .kp-page.kp-rtl .dim-tag {
   font-size: 0.78rem;
