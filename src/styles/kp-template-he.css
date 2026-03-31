@@ -151,21 +151,21 @@
   background: #F8F4EC;
   border: 1px solid #E0D5C0;
   border-radius: 6px;
-  padding: 16px 20px;
-  margin-bottom: 20px;
+  padding: 12px 20px;
+  margin-bottom: 16px;
   font-size: 0.95rem;
 }
 .kp-page.kp-rtl .dim-box h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1.05rem;
   color: #0A0A0A;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .kp-page.kp-rtl .dim-row {
   display: flex;
   gap: 8px;
   align-items: baseline;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   flex-direction: row-reverse;
 }
 .kp-page.kp-rtl .dim-tag {
@@ -180,4 +180,20 @@
 .kp-page.kp-rtl .dim-line {
   color: #5A5A5A;
   font-size: 0.9rem;
+}
+
+/* About grid RTL */
+.kp-page.kp-rtl .about-grid {
+  direction: rtl;
+}
+.kp-page.kp-rtl .about-grid > div:first-child {
+  text-align: right;
+}
+
+/* Pay steps RTL */
+.kp-page.kp-rtl .pay-steps {
+  direction: rtl;
+}
+.kp-page.kp-rtl .pay-step {
+  text-align: right;
 }
