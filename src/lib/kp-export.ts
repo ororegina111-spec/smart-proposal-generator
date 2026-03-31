@@ -23,7 +23,7 @@ async function imageToBase64(imgEl: HTMLImageElement): Promise<string> {
   }
 }
 
-export async function exportAsHTML(renderAreaId: string, fileName: string) {
+export async function exportAsHTML(renderAreaId: string, fileName: string, lang: 'ru' | 'he' = 'ru') {
   const renderArea = document.getElementById(renderAreaId);
   if (!renderArea) return;
 
@@ -56,20 +56,31 @@ export async function exportAsHTML(renderAreaId: string, fileName: string) {
     cloneImages[i].src = base64;
   }
 
+  const isHe = lang === 'he';
+  const htmlLang = isHe ? 'he' : 'ru';
+  const dir = isHe ? ' dir="rtl"' : '';
+  const fontFamily = isHe ? "'Heebo', sans-serif" : "'Raleway', sans-serif";
+  const fontLink = isHe
+    ? 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Heebo:wght@300;400;500;600;700&display=swap'
+    : 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap';
+  const btnText = isHe ? '🖨️ שמור כ-PDF' : '🖨️ Сохранить как PDF';
+  const btnSub = isHe ? 'לחצו כדי לשמור כ-PDF' : 'Нажмите для печати или сохранения в PDF';
+
   const html = `<!DOCTYPE html>
-<html lang="ru">
+<html lang="${htmlLang}"${dir}>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>КП — Modernbuilding — ${fileName}</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>${isHe ? 'הצעת מחיר' : 'КП'} — Modernbuilding — ${fileName}</title>
+<link href="${fontLink}" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: ${fontFamily};
   background: #F7F5F0;
   color: #1A1A1A;
   line-height: 1.7;
+  ${isHe ? 'direction: rtl;' : ''}
 }
 ${allCSS}
 
@@ -97,8 +108,8 @@ ${allCSS}
 </head>
 <body>
 <div class="no-print" style="text-align:center;padding:20px;">
-  <button onclick="window.print()" style="background:linear-gradient(135deg,#B8892A,#E8D08A,#B8892A);border:none;padding:13px 36px;font-family:'Raleway',sans-serif;font-size:1rem;font-weight:700;color:#0A0A0A;border-radius:4px;cursor:pointer;letter-spacing:1px;">🖨️ Сохранить как PDF</button>
-  <p style="font-size:0.82rem;color:#888;margin-top:8px;">Нажмите для печати или сохранения в PDF</p>
+  <button onclick="window.print()" style="background:linear-gradient(135deg,#B8892A,#E8D08A,#B8892A);border:none;padding:13px 36px;font-family:${fontFamily};font-size:1rem;font-weight:700;color:#0A0A0A;border-radius:4px;cursor:pointer;letter-spacing:1px;">${btnText}</button>
+  <p style="font-size:0.82rem;color:#888;margin-top:8px;">${btnSub}</p>
 </div>
 ${clone.innerHTML}
 </body>
