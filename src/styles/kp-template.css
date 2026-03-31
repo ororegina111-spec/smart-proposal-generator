@@ -515,7 +515,7 @@
   .kp-page {
     width: 210mm !important;
     min-height: 297mm !important;
-    height: auto !important;
+    height: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
     page-break-after: always !important;

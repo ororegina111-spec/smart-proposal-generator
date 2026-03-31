@@ -19,13 +19,13 @@ const Index = () => {
     setTimeout(() => printPDF(), 200);
   };
 
-  const handleDownloadHTML = () => {
+  const handleDownloadHTML = async () => {
     if (!formData.clientName) {
       alert('Введите имя клиента');
       return;
     }
     const fileName = `КП_${formData.clientName}_${formData.orderNumber}`;
-    exportAsHTML('kp-render-area', fileName);
+    await exportAsHTML('kp-render-area', fileName);
   };
 
   return (
