@@ -56,14 +56,6 @@ export function KPSidebar({ data, computed, onUpdate, onReset, onPrintPDF, onDow
         </div>
 
         <div className="kp-field">
-          <label>Тип закрытия</label>
-          <select value={data.closureSystem} onChange={e => onUpdate('closureSystem', e.target.value)}>
-            <option value="Безрамное складное">Безрамное складное (TANGO/TIARA)</option>
-            <option value="Раздвижное остекление">Раздвижное (SLIDER)</option>
-          </select>
-        </div>
-
-        <div className="kp-field">
           <label>Тип стекла</label>
           <select value={data.glassType} onChange={e => onUpdate('glassType', e.target.value)}>
             <option value="Прозрачное закалённое 10 мм">Прозрачное 10 мм</option>
