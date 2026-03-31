@@ -17,16 +17,16 @@ export function KPPage4Systems() {
         </div>
       </div>
 
-      <div className="sys-cards">
+      <div className="sys-cards" style={{padding:'16px 36px', gap:'12px'}}>
         {/* TANGO/TIARA */}
         <div className="sys-card">
-          <div className="sys-card-head">
+          <div className="sys-card-head" style={{padding:'10px 16px'}}>
             <h4>СИСТЕМА TANGO / TIARA</h4>
             <p>Безрамное складное остекление</p>
           </div>
-          <div className="sys-card-body">
-            <img src={kpImg7} alt="TANGO" />
-            <p style={{fontSize:'0.87rem',marginBottom:'10px'}}>Идеальное решение для тех, кто ценит максимальный панорамный обзор и эстетику. Конструкция из закалённого стекла без вертикальных рам. Панели можно полностью сдвинуть и сложить «книжкой», превратив балкон в открытую веранду.</p>
+          <div className="sys-card-body" style={{padding:'10px 16px'}}>
+            <img src={kpImg7} alt="TANGO" style={{height:'32mm', marginBottom:'8px'}} />
+            <p style={{fontSize:'0.82rem',marginBottom:'6px',lineHeight:'1.45'}}>Идеальное решение для тех, кто ценит максимальный панорамный обзор и эстетику. Панели складываются «книжкой», открывая 100% проёма.</p>
             <table className="spec-mini">
               <tbody>
                 <tr><td>Тип стекла</td><td>Закалённое 10 мм / Триплекс 5+5 мм</td></tr>
