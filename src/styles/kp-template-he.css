@@ -195,5 +195,8 @@
   direction: rtl;
 }
 .kp-page.kp-rtl .pay-step {
-  text-align: right;
+  text-align: center;
+}
+.kp-page.kp-rtl .pay-step .pct {
+  text-align: center;
 }
