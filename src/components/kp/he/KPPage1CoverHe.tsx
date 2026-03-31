@@ -47,7 +47,7 @@ export function KPPage1CoverHe({ data, computed }: Props) {
       <div className="cover-greet">
         שלום, <strong><span className="v">{data.clientName || '—'}</span></strong>!<br />
         תודה על המידות שמסרת עבור המרפסת שלך.
-        על בסיס הנתונים שסיפקת, חברת <strong>Modernbuilding</strong> הכינה הצעת מחיר מקדמית למערכת <strong>{data.closureSystem}</strong> —
+        על בסיס הנתונים שסיפקת, חברת <strong>Modernbuilding</strong> הכינה הצעת מחיר מקדמית למערכת <strong>סגירה נאספת ללא מסגרת</strong> —
         שתעזור לך להפוך את המרפסת למרחב נוסף — בטוח, פונקציונלי ואסתטי.
       </div>
 

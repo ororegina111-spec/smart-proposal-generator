@@ -69,15 +69,15 @@ export function KPPage4SystemsHe({ data }: Props) {
       <div className="faq-box">
         <h4>תשובות לשאלות נפוצות</h4>
         <div className="faq-item">
-          <div className="faq-q">❓ הזכוכית שבירה?</div>
+          <div className="faq-q">הזכוכית שבירה?</div>
           <div className="faq-a">רק נראה כך. זכוכית מחוסמת 10 מ״מ — כשנשברת היא מתפוררת לפירורים בטוחים עם קצוות עגולים, ללא סכנה לפציעה.</div>
         </div>
         <div className="faq-item">
-          <div className="faq-q">❓ מפחד שיהיה רועש?</div>
+          <div className="faq-q">מפחד שיהיה רועש?</div>
           <div className="faq-a">להיפך. פרופילים איכותיים ואטמי סיליקון בין הכנפות מפחיתים את רעש הרחוב ומבטיחים שקט בתוך הדירה.</div>
         </div>
         <div className="faq-item">
-          <div className="faq-q">❓ יקר וארוך?</div>
+          <div className="faq-q">יקר וארוך?</div>
           <div className="faq-a">יש לנו ייצור משלנו בישראל המבטיח זמן ייצור של 3 שבועות בלבד. נסו ותשתכנעו!</div>
         </div>
       </div>

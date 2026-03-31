@@ -91,8 +91,8 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
             </tr>
             <tr className="total">
               <td colSpan={3}><strong>סה״כ (אומדן)</strong></td>
-              <td><span className="v">{computed.area}</span> מ״ר</td>
-              <td><span className="v">{computed.totalPrice}</span> ₪</td>
+              <td style={{whiteSpace:'nowrap', fontSize:'0.85rem'}}><span className="v">{computed.area}</span> מ״ר</td>
+              <td style={{whiteSpace:'nowrap', fontSize:'0.85rem'}}><span className="v">{computed.totalPrice}</span> ₪</td>
             </tr>
           </tbody>
         </table>
