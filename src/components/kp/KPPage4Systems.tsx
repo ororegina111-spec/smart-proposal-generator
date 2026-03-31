@@ -62,8 +62,8 @@ export function KPPage4Systems() {
       </div>
 
       {/* FAQ */}
-      <div className="faq-box">
-        <h4>Часто задаваемые вопросы</h4>
+      <div className="faq-box" style={{margin:'0 36px 12px', padding:'14px 18px'}}>
+        <h4 style={{marginBottom:'10px'}}>Часто задаваемые вопросы</h4>
         <div className="faq-item">
           <div className="faq-q">Стекло хрупкое?</div>
           <div className="faq-a">Только на вид. Закалённое стекло 10 мм при разрушении рассыпается на безопасную крошку с тупыми краями — не причиняет вреда.</div>
