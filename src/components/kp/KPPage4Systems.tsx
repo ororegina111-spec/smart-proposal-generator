@@ -1,9 +1,6 @@
 import kpImg6 from '@/assets/kp/kp_img_6.jpg';
 import kpImg7 from '@/assets/kp/kp_img_7.jpg';
 import kpImg8 from '@/assets/kp/kp_img_8.jpg';
-import kpImg9 from '@/assets/kp/kp_img_9.jpg';
-import kpImg10 from '@/assets/kp/kp_img_10.jpg';
-import kpImg11 from '@/assets/kp/kp_img_11.jpg';
 
 export function KPPage4Systems() {
   return (
