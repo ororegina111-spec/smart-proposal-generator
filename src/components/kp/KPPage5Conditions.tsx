@@ -6,13 +6,13 @@ interface Props {
 
 export function KPPage5Conditions({ data }: Props) {
   return (
-    <div className="kp-page">
+    <div className="kp-page" style={{display:'flex', flexDirection:'column', minHeight:'297mm'}}>
       <div className="cond-head">
         <div className="label">Общие условия</div>
         <h2>Условия коммерческого предложения</h2>
       </div>
 
-      <div className="inner" style={{paddingTop:'22px'}}>
+      <div className="inner" style={{paddingTop:'12px'}}>
         <ul className="cond-list">
           <li>Указанная цена является ориентировочной и основана на размерах и информации, предоставленных заказчиком. Представлены без НДС.</li>
           <li>Окончательная цена будет определена после проведения профессионального замера на объекте представителем компании.</li>
@@ -57,6 +57,8 @@ export function KPPage5Conditions({ data }: Props) {
           ⏱ Срок изготовления: <strong>от 21 рабочих дней</strong> с момента окончательного замера и подтверждения заказа, вместо 61 рабочих дней у конкурентов.
         </div>
       </div>
+
+      <div style={{flex:1}}></div>
 
       <div className="pg-footer">
         <span className="fb">Modernbuilding</span>
