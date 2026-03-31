@@ -6,7 +6,7 @@ interface Props {
 
 export function KPPage5Conditions({ data }: Props) {
   return (
-    <div className="kp-page">
+    <div className="kp-page" style={{display:'flex', flexDirection:'column', minHeight:'297mm'}}>
       <div className="cond-head">
         <div className="label">Общие условия</div>
         <h2>Условия коммерческого предложения</h2>
