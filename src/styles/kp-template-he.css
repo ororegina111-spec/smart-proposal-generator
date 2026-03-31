@@ -127,6 +127,7 @@
   list-style: none;
 }
 .kp-page.kp-rtl .cond-list li {
+  display: flex;
   flex-direction: row-reverse;
   text-align: right;
 }
@@ -136,6 +137,7 @@
   margin-right: 0;
   color: #C9A84C;
   font-weight: 700;
+  flex-shrink: 0;
 }
 .kp-page.kp-rtl .bank-box {
   text-align: right;
