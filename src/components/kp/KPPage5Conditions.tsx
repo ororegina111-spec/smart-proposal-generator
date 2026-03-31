@@ -58,6 +58,8 @@ export function KPPage5Conditions({ data }: Props) {
         </div>
       </div>
 
+      <div style={{flex:1}}></div>
+
       <div className="pg-footer">
         <span className="fb">Modernbuilding</span>
         <span className="fc"><span className="v">{data.clientName || '—'}</span> · <span className="v">{data.city || '—'}</span> · mdtinyhaus.com</span>
