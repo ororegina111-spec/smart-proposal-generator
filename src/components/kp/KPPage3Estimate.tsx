@@ -16,9 +16,9 @@ export function KPPage3Estimate({ data, computed }: Props) {
         <div className="sub">Клиент: <span className="v">{data.clientName || '—'}</span> · <span className="v">{data.city || '—'}</span> · Площадь: <span className="v">{computed.area}</span> м²</div>
       </div>
 
-      <div className="inner" style={{paddingTop:'22px'}}>
+      <div className="inner" style={{paddingTop:'16px', paddingBottom:'10px'}}>
         {/* Sizes */}
-        <div className="sizes-grid">
+        <div className="sizes-grid" style={{marginBottom:'14px'}}>
           <div className="size-card">
             <label>Длина</label>
             <span className="val">{data.length}</span>
