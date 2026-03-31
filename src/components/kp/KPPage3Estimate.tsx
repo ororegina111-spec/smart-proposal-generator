@@ -9,7 +9,7 @@ export function KPPage3Estimate({ data, computed }: Props) {
   const fmt = (n: number) => n.toLocaleString('ru-RU');
 
   return (
-    <div className="kp-page">
+    <div className="kp-page" style={{display:'flex', flexDirection:'column', minHeight:'297mm'}}>
       <div className="est-header">
         <div className="label">Предварительная смета</div>
         <h2>Закрытие балкона — <span className="v">{data.productType}</span></h2>
