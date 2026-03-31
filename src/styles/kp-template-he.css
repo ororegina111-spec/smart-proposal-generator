@@ -115,8 +115,21 @@
 .kp-page.kp-rtl .cond-head {
   text-align: right;
 }
+.kp-page.kp-rtl .cond-list {
+  padding-right: 0;
+  padding-left: 0;
+  list-style: none;
+}
 .kp-page.kp-rtl .cond-list li {
   flex-direction: row-reverse;
+  text-align: right;
+}
+.kp-page.kp-rtl .cond-list li::before {
+  content: '—';
+  margin-left: 8px;
+  margin-right: 0;
+  color: #C9A84C;
+  font-weight: 700;
 }
 .kp-page.kp-rtl .bank-box {
   text-align: right;
