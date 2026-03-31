@@ -20,7 +20,7 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
   const fmt = (n: number) => n.toLocaleString('he-IL');
 
   return (
-    <div className="kp-page kp-rtl">
+    <div className="kp-page kp-rtl" style={{display:'flex', flexDirection:'column', minHeight:'297mm'}}>
       <div className="est-header">
         <div className="label">אומדן מקדמי</div>
         <h2>סגירת מרפסת — <span className="v">{heSystem(data.productType)}</span></h2>
@@ -103,15 +103,17 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
           </tbody>
         </table>
 
-        <div className="note-box">
+        <div className="note-box" style={{fontSize:'0.78rem', lineHeight:'1.4', padding:'8px 14px'}}>
           ⚠️ המחירים מוצגים ללא מע״מ והינם אומדן בלבד. מבוססים על המידות שנמסרו על ידי הלקוח. המחיר הסופי ייקבע לאחר מדידה מקצועית. מחיר המ״ר נשאר קבוע ולא משתנה.
         </div>
 
-        <div className="guarantee-box">
-          <h5>🛡️ אחריות</h5>
+        <div className="guarantee-box" style={{fontSize:'0.78rem', lineHeight:'1.4', padding:'8px 14px'}}>
+          <h5 style={{fontSize:'0.85rem'}}>🛡️ אחריות</h5>
           <p>אחריות מוגבלת ל-5 שנים על המערכת ועל עבודת ההתקנה, לא כולל זכוכית. האחריות תקפה בתנאי שימוש תקין, תחזוקה נאותה ובהיעדר נזק מכני.</p>
         </div>
       </div>
+
+      <div style={{flex:1}}></div>
 
       <div className="pg-footer">
         <span className="fb">Modernbuilding</span>

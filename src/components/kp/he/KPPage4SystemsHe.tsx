@@ -1,9 +1,6 @@
 import kpImg6 from '@/assets/kp/kp_img_6.jpg';
 import kpImg7 from '@/assets/kp/kp_img_7.jpg';
 import kpImg8 from '@/assets/kp/kp_img_8.jpg';
-import kpImg9 from '@/assets/kp/kp_img_9.jpg';
-import kpImg10 from '@/assets/kp/kp_img_10.jpg';
-import kpImg11 from '@/assets/kp/kp_img_11.jpg';
 import { KPFormData } from '@/hooks/useKPData';
 
 interface Props {
@@ -13,7 +10,7 @@ interface Props {
 export function KPPage4SystemsHe({ data }: Props) {
   return (
     <div className="kp-page kp-rtl">
-      <div className="sys-hero">
+      <div className="sys-hero" style={{ height: '62mm' }}>
         <img src={kpImg6} alt="מערכת סגירה" />
         <div className="sys-hero-ov"></div>
         <div className="sys-hero-txt">
@@ -22,17 +19,17 @@ export function KPPage4SystemsHe({ data }: Props) {
         </div>
       </div>
 
-      <div className="sys-cards">
+      <div className="sys-cards" style={{ padding: '12px 36px 10px', gap: '10px' }}>
         {/* TANGO/TIARA */}
         <div className="sys-card">
-          <div className="sys-card-head">
+          <div className="sys-card-head" style={{ padding: '8px 14px' }}>
             <h4>מערכת TANGO / TIARA</h4>
-            <p>סגירה נאספת ללא מסגרת</p>
+            <p style={{ fontSize: '0.76rem', marginTop: '2px' }}>סגירה נאספת ללא מסגרת</p>
           </div>
-          <div className="sys-card-body">
-            <img src={kpImg7} alt="Tango Tiara" />
-            <p style={{fontSize:'0.87rem',marginBottom:'10px'}}>פתרון אידיאלי למי שמעריך נוף פנורמי מקסימלי ואסתטיקה. מבנה מזכוכית מחוסמת ללא מסגרות אנכיות. הפנלים ניתנים לקיפול מלא כ"ספר", והופכים את המרפסת לוורנדה פתוחה.</p>
-            <table className="spec-mini">
+          <div className="sys-card-body" style={{ padding: '8px 14px' }}>
+            <img src={kpImg7} alt="Tango Tiara" style={{ height: '26mm', marginBottom: '6px' }} />
+            <p style={{fontSize:'0.76rem',marginBottom:'4px',lineHeight:'1.35'}}>פתרון אידיאלי למי שמעריך נוף פנורמי מקסימלי ואסתטיקה. הפנלים ניתנים לקיפול מלא כ"ספר", והופכים את המרפסת לוורנדה פתוחה.</p>
+            <table className="spec-mini" style={{ fontSize: '0.78rem' }}>
               <tbody>
                 <tr><td>סוג זכוכית</td><td>מחוסמת 10מ״מ / טריפלקס 5+5מ״מ</td></tr>
                 <tr><td>פתיחה</td><td>מתקפלת, 100% של הפתח פתוח</td></tr>
@@ -46,14 +43,14 @@ export function KPPage4SystemsHe({ data }: Props) {
 
         {/* SLIDER */}
         <div className="sys-card">
-          <div className="sys-card-head">
+          <div className="sys-card-head" style={{ padding: '8px 14px' }}>
             <h4>מערכת SLIDER</h4>
-            <p>זיגוג הזזה</p>
+            <p style={{ fontSize: '0.76rem', marginTop: '2px' }}>זיגוג הזזה</p>
           </div>
-          <div className="sys-card-body">
-            <img src={kpImg8} alt="Slider" />
-            <p style={{fontSize:'0.87rem',marginBottom:'10px'}}>מערכת פונקציונלית החוסכת מקום — הכנפות נעות לאורך המסילות, ללא פתיחה פנימה. מספקת הגנה טובה מרוח ומשקעים. אפשרות חסכונית יותר.</p>
-            <table className="spec-mini">
+          <div className="sys-card-body" style={{ padding: '8px 14px' }}>
+            <img src={kpImg8} alt="Slider" style={{ height: '26mm', marginBottom: '6px' }} />
+            <p style={{fontSize:'0.76rem',marginBottom:'4px',lineHeight:'1.35'}}>מערכת פונקציונלית החוסכת מקום — הכנפות נעות לאורך המסילות, ללא פתיחה פנימה. אפשרות חסכונית יותר.</p>
+            <table className="spec-mini" style={{ fontSize: '0.78rem' }}>
               <tbody>
                 <tr><td>סוג זכוכית</td><td>מחוסמת 10מ״מ / מערכות אלומיניום</td></tr>
                 <tr><td>פתיחה</td><td>הזזה לצדדים (כמו ארון הזזה)</td></tr>
@@ -66,30 +63,23 @@ export function KPPage4SystemsHe({ data }: Props) {
         </div>
       </div>
 
-      <div className="faq-box">
-        <h4>תשובות לשאלות נפוצות</h4>
-        <div className="faq-item">
-          <div className="faq-q">הזכוכית שבירה?</div>
-          <div className="faq-a">רק נראה כך. זכוכית מחוסמת 10 מ״מ — כשנשברת היא מתפוררת לפירורים בטוחים עם קצוות עגולים, ללא סכנה לפציעה.</div>
+      <div className="faq-box" style={{ margin: '0 36px 8px', padding: '12px 16px' }}>
+        <h4 style={{ marginBottom: '8px' }}>תשובות לשאלות נפוצות</h4>
+        <div className="faq-item" style={{ marginBottom: '8px', paddingBottom: '8px' }}>
+          <div className="faq-q" style={{ fontSize: '0.88rem' }}>הזכוכית שבירה?</div>
+          <div className="faq-a" style={{ fontSize: '0.8rem', lineHeight: '1.45' }}>רק נראה כך. זכוכית מחוסמת 10 מ״מ — כשנשברת היא מתפוררת לפירורים בטוחים עם קצוות עגולים, ללא סכנה לפציעה.</div>
+        </div>
+        <div className="faq-item" style={{ marginBottom: '8px', paddingBottom: '8px' }}>
+          <div className="faq-q" style={{ fontSize: '0.88rem' }}>מפחד שיהיה רועש?</div>
+          <div className="faq-a" style={{ fontSize: '0.8rem', lineHeight: '1.45' }}>להיפך. פרופילים איכותיים ואטמי סיליקון בין הכנפות מפחיתים את רעש הרחוב ומבטיחים שקט בתוך הדירה.</div>
         </div>
         <div className="faq-item">
-          <div className="faq-q">מפחד שיהיה רועש?</div>
-          <div className="faq-a">להיפך. פרופילים איכותיים ואטמי סיליקון בין הכנפות מפחיתים את רעש הרחוב ומבטיחים שקט בתוך הדירה.</div>
-        </div>
-        <div className="faq-item">
-          <div className="faq-q">יקר וארוך?</div>
-          <div className="faq-a">יש לנו ייצור משלנו בישראל המבטיח זמן ייצור של 3 שבועות בלבד. נסו ותשתכנעו!</div>
+          <div className="faq-q" style={{ fontSize: '0.88rem' }}>יקר וארוך?</div>
+          <div className="faq-a" style={{ fontSize: '0.8rem', lineHeight: '1.45' }}>יש לנו ייצור משלנו בישראל המבטיח זמן ייצור של 3 שבועות בלבד. נסו ותשתכנעו!</div>
         </div>
       </div>
 
-      {/* Gallery */}
-      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'5px', margin:'0 36px 16px'}}>
-        <img src={kpImg9} alt="" style={{width:'100%', height:'36mm', objectFit:'cover', borderRadius:'4px'}} />
-        <img src={kpImg10} alt="" style={{width:'100%', height:'36mm', objectFit:'cover', borderRadius:'4px'}} />
-        <img src={kpImg11} alt="" style={{width:'100%', height:'36mm', objectFit:'cover', borderRadius:'4px'}} />
-      </div>
-
-      <div className="pg-footer">
+      <div className="pg-footer" style={{ marginTop: '8px' }}>
         <span className="fb">Modernbuilding</span>
         <span className="fc">הזמנה מס׳ <span className="v">{data.orderNumber}</span></span>
         <span className="fn">4</span>
