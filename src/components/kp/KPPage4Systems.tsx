@@ -7,7 +7,7 @@ import kpImg11 from '@/assets/kp/kp_img_11.jpg';
 
 export function KPPage4Systems() {
   return (
-    <div className="kp-page">
+    <div className="kp-page" style={{display:'flex', flexDirection:'column', minHeight:'297mm'}}>
       <div className="sys-hero">
         <img src={kpImg6} alt="Системы" />
         <div className="sys-hero-ov"></div>
@@ -84,6 +84,8 @@ export function KPPage4Systems() {
         <img src={kpImg10} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
         <img src={kpImg11} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
       </div>
+
+      <div style={{flex:1}}></div>
 
       <div className="pg-footer">
         <span className="fb">Modernbuilding</span>
