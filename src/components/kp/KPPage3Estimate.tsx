@@ -92,13 +92,13 @@ export function KPPage3Estimate({ data, computed }: Props) {
           </tbody>
         </table>
 
-        <div className="note-box">
-          ⚠️ Цены представлены без НДС и являются ориентировочными. Основаны на размерах, предоставленных клиентом. Окончательная цена определяется после профессионального замера. Цена за м² фиксируется и не меняется.
+        <div className="note-box" style={{fontSize:'0.75rem', lineHeight:'1.3', padding:'6px 12px'}}>
+          Цены без НДС, ориентировочные. Основаны на размерах клиента. Окончательная цена — после замера. Цена за м² фиксируется.
         </div>
 
-        <div className="guarantee-box" style={{marginTop:'10px', padding:'10px 16px'}}>
-          <h5>🛡️ Гарантия</h5>
-          <p style={{fontSize:'0.82rem'}}>Ограниченная гарантия 5 лет на систему и монтажные работы, не включая стекло. Гарантия действует при условии нормальной эксплуатации, надлежащего обслуживания и отсутствия механических повреждений.</p>
+        <div className="guarantee-box" style={{marginTop:'6px', padding:'8px 16px', display:'flex', alignItems:'center', gap:'10px'}}>
+          <h5 style={{whiteSpace:'nowrap'}}>🛡️ Гарантия</h5>
+          <p style={{fontSize:'0.78rem', lineHeight:'1.35', margin:0}}>5 лет на систему и монтаж (кроме стекла). Действует при нормальной эксплуатации и надлежащем обслуживании.</p>
         </div>
       </div>
 
