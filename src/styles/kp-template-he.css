@@ -110,6 +110,12 @@
 .kp-page.kp-rtl .faq-box {
   text-align: right;
 }
+.kp-page.kp-rtl .faq-q {
+  text-align: right;
+}
+.kp-page.kp-rtl .faq-a {
+  text-align: right;
+}
 
 /* Conditions RTL */
 .kp-page.kp-rtl .cond-head {
