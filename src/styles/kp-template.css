@@ -9,7 +9,6 @@
   width: 210mm;
   background: white;
   margin: 0 auto 24px;
-  overflow: hidden;
   page-break-after: always;
   position: relative;
   font-family: 'Raleway', sans-serif;
@@ -515,7 +514,6 @@
   .kp-page {
     width: 210mm !important;
     min-height: 297mm !important;
-    height: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
     page-break-after: always !important;

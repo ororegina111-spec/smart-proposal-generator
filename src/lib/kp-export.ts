@@ -95,6 +95,7 @@ ${allCSS}
     page-break-after: always !important;
     page-break-inside: avoid !important;
     box-shadow: none !important;
+    overflow: visible !important;
   }
   .kp-page:last-child { page-break-after: auto !important; }
   * {
