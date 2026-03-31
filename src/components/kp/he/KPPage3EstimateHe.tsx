@@ -113,9 +113,7 @@ export function KPPage3EstimateHe({ data, computed }: Props) {
         </div>
       </div>
 
-      <div style={{flex:1}}></div>
-
-      <div className="pg-footer">
+      <div className="pg-footer" style={{marginTop:'8px'}}>
         <span className="fb">Modernbuilding</span>
         <span className="fc">לקוח: <span className="v">{data.clientName || '—'}</span></span>
         <span className="fn">3</span>
