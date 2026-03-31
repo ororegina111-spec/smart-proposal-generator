@@ -102,6 +102,8 @@ export function KPPage3Estimate({ data, computed }: Props) {
         </div>
       </div>
 
+      <div style={{flex:1}}></div>
+
       <div className="pg-footer">
         <span className="fb">Modernbuilding</span>
         <span className="fc">Клиент: <span className="v">{data.clientName || '—'}</span></span>

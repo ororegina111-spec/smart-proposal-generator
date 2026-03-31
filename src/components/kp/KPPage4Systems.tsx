@@ -79,7 +79,7 @@ export function KPPage4Systems() {
       </div>
 
       {/* Gallery */}
-      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'4px', margin:'0 36px 10px'}}>
+      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'4px', margin:'0 36px 0'}}>
         <img src={kpImg9} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
         <img src={kpImg10} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
         <img src={kpImg11} alt="" style={{width:'100%', height:'30mm', objectFit:'cover', borderRadius:'4px'}} />
