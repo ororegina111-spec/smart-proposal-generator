@@ -104,25 +104,29 @@ export function KPSidebar({ data, computed, lang, onLangChange, onUpdate, onRese
     <div className="kp-sidebar no-print" style={lang === 'he' ? {direction: 'rtl'} : undefined}>
       <div className="kp-sidebar-header">
         <h2>{t.title}</h2>
-        <div style={{display:'flex', gap:'6px', marginTop:'8px'}}>
+        <div style={{display:'flex', gap:'6px', marginTop:'8px', position:'relative', zIndex:10}}>
           <button
+            type="button"
             onClick={() => onLangChange('ru')}
             style={{
               flex:1, padding:'6px 0', border:'1px solid rgba(201,168,76,.4)',
               borderRadius:'4px', cursor:'pointer', fontWeight:700, fontSize:'0.85rem',
               background: lang === 'ru' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : 'transparent',
               color: lang === 'ru' ? '#0A0A0A' : '#C9A84C',
+              position:'relative', zIndex:10,
             }}
           >
             🇷🇺 Русский
           </button>
           <button
+            type="button"
             onClick={() => onLangChange('he')}
             style={{
               flex:1, padding:'6px 0', border:'1px solid rgba(201,168,76,.4)',
               borderRadius:'4px', cursor:'pointer', fontWeight:700, fontSize:'0.85rem',
               background: lang === 'he' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : 'transparent',
               color: lang === 'he' ? '#0A0A0A' : '#C9A84C',
+              position:'relative', zIndex:10,
             }}
           >
             🇮🇱 עברית
