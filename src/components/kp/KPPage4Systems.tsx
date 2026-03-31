@@ -72,12 +72,6 @@ export function KPPage4Systems() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '4px', margin: '0 36px 0' }}>
-        <img src={kpImg9} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
-        <img src={kpImg10} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
-        <img src={kpImg11} alt="" style={{ width: '100%', height: '24mm', objectFit: 'cover', borderRadius: '4px' }} />
-      </div>
-
       <div className="pg-footer" style={{ marginTop: '8px' }}>
         <span className="fb">Modernbuilding</span>
         <span className="fc">mdtinyhaus.com</span>
