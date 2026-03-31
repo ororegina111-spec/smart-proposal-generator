@@ -16,9 +16,9 @@ export function KPPage3Estimate({ data, computed }: Props) {
         <div className="sub">Клиент: <span className="v">{data.clientName || '—'}</span> · <span className="v">{data.city || '—'}</span> · Площадь: <span className="v">{computed.area}</span> м²</div>
       </div>
 
-      <div className="inner" style={{paddingTop:'22px'}}>
+      <div className="inner" style={{paddingTop:'16px', paddingBottom:'10px'}}>
         {/* Sizes */}
-        <div className="sizes-grid">
+        <div className="sizes-grid" style={{marginBottom:'14px'}}>
           <div className="size-card">
             <label>Длина</label>
             <span className="val">{data.length}</span>
@@ -96,9 +96,9 @@ export function KPPage3Estimate({ data, computed }: Props) {
           ⚠️ Цены представлены без НДС и являются ориентировочными. Основаны на размерах, предоставленных клиентом. Окончательная цена определяется после профессионального замера. Цена за м² фиксируется и не меняется.
         </div>
 
-        <div className="guarantee-box">
+        <div className="guarantee-box" style={{marginTop:'10px', padding:'10px 16px'}}>
           <h5>🛡️ Гарантия</h5>
-          <p>Ограниченная гарантия 5 лет на систему и монтажные работы, не включая стекло. Гарантия действует при условии нормальной эксплуатации, надлежащего обслуживания и отсутствия механических повреждений.</p>
+          <p style={{fontSize:'0.82rem'}}>Ограниченная гарантия 5 лет на систему и монтажные работы, не включая стекло. Гарантия действует при условии нормальной эксплуатации, надлежащего обслуживания и отсутствия механических повреждений.</p>
         </div>
       </div>
 
