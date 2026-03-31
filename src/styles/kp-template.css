@@ -323,10 +323,10 @@
   padding: 11px 12px;
 }
 .kp-page table.spec .total td:last-child {
-  background: linear-gradient(135deg,#B8892A 0%,#E8D08A 50%,#B8892A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.1rem;
+  color: #E8D08A !important;
+  -webkit-text-fill-color: #E8D08A;
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px rgba(201,168,76,.4);
 }
 
 .kp-page .note-box {
