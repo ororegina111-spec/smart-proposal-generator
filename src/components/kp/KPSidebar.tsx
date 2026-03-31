@@ -109,9 +109,9 @@ export function KPSidebar({ data, computed, lang, onLangChange, onUpdate, onRese
             type="button"
             onClick={() => onLangChange('ru')}
             style={{
-              flex:1, padding:'6px 0', border:'1px solid rgba(201,168,76,.4)',
+              flex:1, padding:'8px 0', border: lang === 'ru' ? '2px solid #C9A84C' : '1px solid rgba(201,168,76,.4)',
               borderRadius:'4px', cursor:'pointer', fontWeight:700, fontSize:'0.85rem',
-              background: lang === 'ru' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : 'transparent',
+              background: lang === 'ru' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : '#1E1E1E',
               color: lang === 'ru' ? '#0A0A0A' : '#C9A84C',
               position:'relative', zIndex:10,
             }}
@@ -122,9 +122,9 @@ export function KPSidebar({ data, computed, lang, onLangChange, onUpdate, onRese
             type="button"
             onClick={() => onLangChange('he')}
             style={{
-              flex:1, padding:'6px 0', border:'1px solid rgba(201,168,76,.4)',
+              flex:1, padding:'8px 0', border: lang === 'he' ? '2px solid #C9A84C' : '1px solid rgba(201,168,76,.4)',
               borderRadius:'4px', cursor:'pointer', fontWeight:700, fontSize:'0.85rem',
-              background: lang === 'he' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : 'transparent',
+              background: lang === 'he' ? 'linear-gradient(135deg,#B8892A,#E8D08A,#B8892A)' : '#1E1E1E',
               color: lang === 'he' ? '#0A0A0A' : '#C9A84C',
               position:'relative', zIndex:10,
             }}
