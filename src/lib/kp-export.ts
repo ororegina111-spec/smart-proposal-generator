@@ -23,9 +23,9 @@ async function imageToBase64(imgEl: HTMLImageElement): Promise<string> {
   }
 }
 
-export async function exportAsHTML(renderAreaId: string, fileName: string, lang: 'ru' | 'he' = 'ru') {
+async function buildSelfContainedHTML(renderAreaId: string, fileName: string, lang: 'ru' | 'he', autoPrint: boolean): Promise<string | null> {
   const renderArea = document.getElementById(renderAreaId);
-  if (!renderArea) return;
+  if (!renderArea) return null;
 
   // Get all stylesheets content
   const styleSheets = Array.from(document.styleSheets);
@@ -113,9 +113,16 @@ ${allCSS}
   <p style="font-size:0.82rem;color:#888;margin-top:8px;">${btnSub}</p>
 </div>
 ${clone.innerHTML}
+${autoPrint ? `<script>window.addEventListener('load',function(){setTimeout(function(){window.focus();window.print();},600);});</script>` : ''}
 </body>
 </html>`;
 
+  return html;
+}
+
+export async function exportAsHTML(renderAreaId: string, fileName: string, lang: 'ru' | 'he' = 'ru') {
+  const html = await buildSelfContainedHTML(renderAreaId, fileName, lang, false);
+  if (!html) return;
   const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -125,6 +132,20 @@ ${clone.innerHTML}
   URL.revokeObjectURL(url);
 }
 
-export function printPDF() {
-  window.print();
+export async function printPDF(renderAreaId?: string, fileName?: string, lang: 'ru' | 'he' = 'ru') {
+  if (!renderAreaId) {
+    window.print();
+    return;
+  }
+  const html = await buildSelfContainedHTML(renderAreaId, fileName || 'KP', lang, true);
+  if (!html) return;
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const win = window.open(url, '_blank');
+  if (!win) {
+    alert(lang === 'ru'
+      ? 'Разрешите всплывающие окна, чтобы скачать PDF'
+      : 'נא לאפשר חלונות קופצים כדי לשמור PDF');
+  }
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
