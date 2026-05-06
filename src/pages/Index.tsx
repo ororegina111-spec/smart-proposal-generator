@@ -19,12 +19,14 @@ const Index = () => {
   const { formData, updateField, resetForm, computed } = useKPData();
   const [lang, setLang] = useState<KPLang>('ru');
 
-  const handlePrintPDF = () => {
+  const handlePrintPDF = async () => {
     if (!formData.clientName) {
       alert(lang === 'ru' ? 'Введите имя клиента' : 'נא להזין שם לקוח');
       return;
     }
-    setTimeout(() => printPDF(), 200);
+    const prefix = lang === 'ru' ? 'КП' : 'הצעת_מחיר';
+    const fileName = `${prefix}_${formData.clientName}_${formData.orderNumber}`;
+    await printPDF('kp-render-area', fileName, lang);
   };
 
   const handleDownloadHTML = async () => {
