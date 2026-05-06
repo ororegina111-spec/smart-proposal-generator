@@ -23,9 +23,9 @@ async function imageToBase64(imgEl: HTMLImageElement): Promise<string> {
   }
 }
 
-export async function exportAsHTML(renderAreaId: string, fileName: string, lang: 'ru' | 'he' = 'ru') {
+async function buildSelfContainedHTML(renderAreaId: string, fileName: string, lang: 'ru' | 'he', autoPrint: boolean): Promise<string | null> {
   const renderArea = document.getElementById(renderAreaId);
-  if (!renderArea) return;
+  if (!renderArea) return null;
 
   // Get all stylesheets content
   const styleSheets = Array.from(document.styleSheets);
